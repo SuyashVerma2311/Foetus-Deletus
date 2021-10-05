@@ -80,9 +80,9 @@ function pMat = SingleMissileData(v,theta,phi,x0,y0,z0,t0,ts,rangexy,rangez,tmax
     uppT = t0 + 2*v*sin(pi*theta/180)/g;
 
     syms x(t) y(t) z(t);
-    x = piecewise(t > lowT && t < uppT, v * (t - t0) * cos(theta) * cos(phi) + x0, NaN);
-    y = piecewise(t > lowT && t < uppT, v * (t - t0) * cos(theta) * sin(phi) + y0, NaN);
-    z = piecewise(t > lowT && t < uppT, v * (t - t0) * sin(theta) - g * ((t - t0)^2) / 2, NaN);
+    x(t) = piecewise(t > lowT && t < uppT, v * (t - t0) * cos(theta) * cos(phi) + x0, NaN);
+    y(t) = piecewise(t > lowT && t < uppT, v * (t - t0) * cos(theta) * sin(phi) + y0, NaN);
+    z(t) = piecewise(t > lowT && t < uppT, v * (t - t0) * sin(theta) - g * ((t - t0)^2) / 2, NaN);
 
     pT = T;
     pX = x(T);
