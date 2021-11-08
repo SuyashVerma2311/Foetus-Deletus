@@ -1,2 +1,5 @@
 # Avoid Autosave files.
 *.asv
+
+# Ignore Rough files.
+rough.*
